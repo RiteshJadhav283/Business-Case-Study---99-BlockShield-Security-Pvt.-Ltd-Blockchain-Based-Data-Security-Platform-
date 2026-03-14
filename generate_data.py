@@ -9,7 +9,7 @@ random.seed(42)
 NUM_RECORDS = 1000          
 NUM_CLIENTS = 200           
 INDUSTRIES  = ['Banking', 'Healthcare', 'Government', 'IT']
-START_DATE  = datetime(2024, 1, 1)
+START_DATE  = datetime(2025, 1, 1)
 
 def generate_hash(data: str) -> str:
     return hashlib.sha256(data.encode()).hexdigest()
@@ -38,7 +38,7 @@ for _ in range(NUM_RECORDS):
 
     enc_ok    = np.random.choice([True, False], p=[0.9997, 0.0003])
 
-    tps       = round(max(100, np.random.normal(loc=1200, scale=150)), 1)
+    tps       = round(max(100, np.random.normal(loc=6500, scale=150)), 1)
 
     tampered  = np.random.choice([True, False], p=[0.005, 0.995])
     integrity = 0 if tampered else 1    
